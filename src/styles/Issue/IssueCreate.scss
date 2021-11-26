@@ -1,70 +1,42 @@
 @import '../init.scss';
 
+.ISSUECREATE {
+    background: #5DDADB;
+}
 
 .issueCreate-background{
-    /* Ellipse 61 */
-    position: absolute;
-    width: 1440px;
-    height: 1195px;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
-    background: #5DDADB;
+    width: 1200px;
+    margin: 0 auto;
+
+    .issueCreate-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .issueCreate-pageName{
-        /* 이슈 업!로드 */
-        position: absolute;
-        width: 374px;
-        height: 42px;
-        left: 28px;
-        top: 154px;
-        font-family: Roboto;
-        font-style: normal;
         font-weight: bold;
-        font-size: 55px;
-        line-height: 64px;
-        color: #000000;
+        font-size: 36px;
     }
 
     .issueCreate-temporary{
-        /* Rectangle 292 */
-        position: absolute;
-        width: 209px;
-        height: 72px;
-        left: 1171px;
-        top: 154px;
-        background: #FFFFFF;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 110px;
+        height: 46px;
+        background: white;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
         border-radius: 51px;
-    }
-    
-    button{
-        /* 임시저장 */
-        position: absolute;
-        width: 129px;
-        height: 45px;
-        left: 1211px;
-        top: 168px;
-        font-family: Rajdhani;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 35px;
+
+        font-size: 18px;
         line-height: 45px;
-        /* identical to box height */
         text-align: center;
-        color: #000000;
+        font-weight: bolder;
     }
 
     .issueCreate-wrap{
-        /* Rectangle 282 */
-        position: absolute;
-        width: 1345px;
-        height: 742px;
-        left: 37px;
-        top: 244px;
+        width: 1200px;
         background: #FFFFFF;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+        padding: 30px 50px;
+        margin-top: 20px;
     }
-
-
 }

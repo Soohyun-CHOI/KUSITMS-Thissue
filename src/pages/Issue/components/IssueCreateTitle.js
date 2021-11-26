@@ -13,16 +13,20 @@ const IssueCreateTitle = (props) => {
     return (
         <>
             <div className="issueCreate-step-wrap">
-                <div className="issueCreate-step1">제목</div>
-                <div className="issueCreate-step1-step2"></div>
-                <div className="issueCreate-step2">내용</div>
-                <div className="issueCreate-step2-step3"></div>
-                <div className="issueCreate-step3">분류</div>
+                <div className="issueCreate-step checked">제목</div>
+                <div className="issueCreate-step-link"/>
+                <div className="issueCreate-step">내용</div>
+                <div className="issueCreate-step-link"/>
+                <div className="issueCreate-step">분류</div>
             </div>
-            <div className="issueCreate-title-guide">이슈화하고자 하는 글의 제목을 입력해주세요.</div>
-            <input className="issueCreateTitle-input" type="text" value={props.title} onChange={handleTitle}/>
-            <NavLink to="/issue/create/contents/" className="issueCreate-next">계속하기</NavLink>
-
+            <div className="issueCreateTitle-wrap">
+                <div className="issueCreate-guide">이슈화하고자 하는 글의 제목을 입력해주세요.</div>
+                <input className="issueCreateTitle-input"
+                       type="text" value={props.title} onChange={handleTitle} placeholder="50 글자 이내로 입력해주세요"/>
+            </div>
+            <div className="issueCreate-next-wrap">
+                <NavLink to="/issue/create/contents/" className="issueCreate-next">계속하기</NavLink>
+            </div>
         </>
     )
 }

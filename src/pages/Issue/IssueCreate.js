@@ -41,21 +41,23 @@ const IssueCreate = () => {
     }
 
     return (
-        <>
+        <div className="ISSUECREATE">
             <Header/>
             <div className="issueCreate-background">
-                <div className="issueCreate-pageName">이슈 업!로드</div>
-                <button className="issueCreate-temporary"
-                        onClick={() => createIssue(
-                            title,
-                            contents,
-                            hashtag,
-                            category,
-                            authInfo,
-                            false,
-                        )}>
-                    임시저장
-                </button>
+                <div className="issueCreate-header">
+                    <div className="issueCreate-pageName">이슈 업!로드</div>
+                    <button className="issueCreate-temporary"
+                            onClick={() => createIssue(
+                                title,
+                                contents,
+                                hashtag,
+                                category,
+                                authInfo,
+                                false,
+                            )}>
+                        임시저장
+                    </button>
+                </div>
                 <div className="issueCreate-wrap">
                     <Routes>
                         <Route path="title/"
@@ -86,7 +88,7 @@ const IssueCreate = () => {
                     </Routes>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
