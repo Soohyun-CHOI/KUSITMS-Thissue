@@ -14,9 +14,8 @@
 .issueDetail-bg {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   width: 1200px;
-  height: 550px;
   margin: 0 auto;
 }
 
@@ -25,7 +24,7 @@
   height: 100%;
   background: #FFFFFF;
   box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  padding: 40px 30px;
 
   .issueDetail-hashtag-wrap {
     display: flex;
@@ -73,6 +72,10 @@
         border-radius: 100px;
         font-size: 40px;
         box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       div {

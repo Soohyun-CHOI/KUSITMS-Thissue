@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Header} from "../Common";
+import {Header, PopupLogin} from "../Common";
 import {NavLink} from "react-router-dom";
 import Popup from "reactjs-popup";
 import "../../styles/Issue/IssueDetail.scss";
@@ -95,11 +95,9 @@ const IssueDetail = (props) => {
 
                             <div className="issueDetail-bottom">
                                 <div className="issueDetail-bottom-left">
-                                    {isUped ?
-                                        <button onClick={() => undoUp()} style={{background: "black"}}>🔥</button> :
-                                        <button onClick={() => doUp()}>🔥</button>}
+                                    <PopupLogin trigger={<button>🔥</button>}/>
                                     <div className="text">이슈 업!</div>
-                                    <div>{(issue.issueUps || []).length}</div>
+                                    <div>0</div>
                                 </div>
                                 <div className="issueDetail-bottom-right">
                                     <div className="issueDetail-bottom-right-header">
@@ -107,20 +105,21 @@ const IssueDetail = (props) => {
                                             <div className="issueDetail-up-wrap">
                                                 <div className="issueDetail-bottom-title">업! 한 사람들</div>
                                                 <div className="issueDetail-ups">
-                                                    {(issue.issueUps || []).slice(0, 4).map(up =>
-                                                        <div className="issueDetail-up">{up}</div>)}
-                                                    <Popup className="popup-plus" trigger={<div className="plus">+</div>} modal>
-                                                        {close => (
-                                                            <>
-                                                                <div className="close" onClick={() => close()}>✕</div>
-                                                                <div className="popup-title">업한 사람들</div>
-                                                                <div className="popup-up-wrap">
-                                                                {issue.issueUps.map(up =>
-                                                                    <div className="issueDetail-up">{up}</div>)}
-                                                                </div>
-                                                            </>
-                                                        )}
-                                                    </Popup>
+                                                    아직 업한 사람이 없습니다. 첫 번째로 업!을 해주세요🔥
+                                                    {/*{(issue.issueUps || []).slice(0, 4).map(up =>*/}
+                                                    {/*    <div className="issueDetail-up">{up}</div>)}*/}
+                                                    {/*<Popup className="popup-plus" trigger={<div className="plus">+</div>} modal>*/}
+                                                    {/*    {close => (*/}
+                                                    {/*        <>*/}
+                                                    {/*            <div className="close" onClick={() => close()}>✕</div>*/}
+                                                    {/*            <div className="popup-title">업한 사람들</div>*/}
+                                                    {/*            <div className="popup-up-wrap">*/}
+                                                    {/*            {issue.issueUps.map(up =>*/}
+                                                    {/*                <div className="issueDetail-up">{up}</div>)}*/}
+                                                    {/*            </div>*/}
+                                                    {/*        </>*/}
+                                                    {/*    )}*/}
+                                                    {/*</Popup>*/}
                                                 </div>
                                             </div> :
                                             <div className="issueDetail-ups">

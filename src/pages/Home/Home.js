@@ -11,7 +11,6 @@ import axios from "axios";
 const Home = () => {
   const categoryArray = categories;
   const [issues, setIssues] = useState([]);
-  const [authInfo, setAuthInfo] = useState([]);
   const [target, setTarget] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   //const [itemNums, setItemNums] = useState(window.localStorage.getItem("itemNumsBackup") ? JSON.parse(window.localStorage.getItem("itemNumsBackup")) : 10);
@@ -63,7 +62,7 @@ const Home = () => {
         <>
             <Header/>
             <div className="home-white">
-                <div className="home-title">실시간 이슈 랭킹</div>
+                <div className="home-title">실시간 이슈 랭킹🔥</div>
                 <IssueRanking/>
                 <div className="home-sort-wrap">
                     <div className="home-title">카테고리별 이슈 모아보기</div>

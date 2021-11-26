@@ -2,6 +2,7 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import "../../../styles/Issue/components/IssueCreateTitle.scss";
 
+
 const IssueCreateTitle = (props) => {
     const handleTitle = async (e) => {
         await props.setTitle(e.target.value);
@@ -13,12 +14,15 @@ const IssueCreateTitle = (props) => {
         <>
             <div className="issueCreate-step-wrap">
                 <div className="issueCreate-step1">제목</div>
+                <div className="issueCreate-step1-step2"></div>
                 <div className="issueCreate-step2">내용</div>
+                <div className="issueCreate-step2-step3"></div>
                 <div className="issueCreate-step3">분류</div>
             </div>
             <div className="issueCreate-title-guide">이슈화하고자 하는 글의 제목을 입력해주세요.</div>
-            <input type="text" value={props.title} onChange={handleTitle}/>
+            <input className="issueCreateTitle-input" type="text" value={props.title} onChange={handleTitle}/>
             <NavLink to="/issue/create/contents/" className="issueCreate-next">계속하기</NavLink>
+
         </>
     )
 }
