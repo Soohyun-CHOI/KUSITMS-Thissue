@@ -1,37 +1,37 @@
-import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import { categories, Header } from "../Common";
-import { IssueRanking } from "./components";
-import { NavLink } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Route, Routes} from "react-router-dom";
+import {categories, Header} from "../Common";
+import {IssueRanking} from "./components";
+import {NavLink} from "react-router-dom";
 
 import {HomeCategoryScreening} from "./components";
 import "../../styles/Home/home.scss";
 import axios from "axios";
 
 const Home = () => {
-  const categoryArray = categories;
-  const [issues, setIssues] = useState([]);
-  const [target, setTarget] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  //const [itemNums, setItemNums] = useState(window.localStorage.getItem("itemNumsBackup") ? JSON.parse(window.localStorage.getItem("itemNumsBackup")) : 10);
-  const [itemNums, setItemNums] = useState(12);
+    const categoryArray = categories;
+    const [issues, setIssues] = useState([]);
+    const [target, setTarget] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    //const [itemNums, setItemNums] = useState(window.localStorage.getItem("itemNumsBackup") ? JSON.parse(window.localStorage.getItem("itemNumsBackup")) : 10);
+    const [itemNums, setItemNums] = useState(12);
 
     useEffect(() => {
-        axios.get("/api/issue").then(response => {
+        axios.get("http://localhost:5000/api/issue").then(response => {
             setIssues(response.data);
             console.log(response.data);
         })
     }, [itemNums]);
 
-  const getCategoryIssue = (category) => {
-    return issues.filter((issue) => issue.issueCategory === category);
-  };
+    const getCategoryIssue = (category) => {
+        return issues.filter((issue) => issue.issueCategory === category);
+    };
 
-  const getMoreItem = async () => {
-    setIsLoaded(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setItemNums((prev) => prev + 12);
-    setIsLoaded(false);
+    const getMoreItem = async () => {
+        setIsLoaded(true);
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        setItemNums((prev) => prev + 12);
+        setIsLoaded(false);
 
         // const previousItemNumsBackup = JSON.parse(window.localStorage.getItem("itemNumsBackup"));
         // previousItemNumsBackup ?
@@ -39,13 +39,13 @@ const Home = () => {
         //     window.localStorage.setItem("itemNumsBackup", "20");
     }
 
-  const onIntersect = async ([entry], observer) => {
-    if (entry.isIntersecting && !isLoaded) {
-      observer.unobserve(entry.target);
-      await getMoreItem();
-      observer.observe(entry.target);
-    }
-  };
+    const onIntersect = async ([entry], observer) => {
+        if (entry.isIntersecting && !isLoaded) {
+            observer.unobserve(entry.target);
+            await getMoreItem();
+            observer.observe(entry.target);
+        }
+    };
 
     useEffect(() => {
         let observer;

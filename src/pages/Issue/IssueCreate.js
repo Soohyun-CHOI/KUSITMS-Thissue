@@ -8,6 +8,7 @@ import {
 } from "./components";
 import {postApi} from "../../services/api";
 import "../../styles/Issue/IssueCreate.scss";
+import axios from "axios";
 
 
 const IssueCreate = () => {
@@ -22,17 +23,17 @@ const IssueCreate = () => {
         setAuthInfo("익명");
     }, [isNextStep]);
 
-    const createIssue = async (issueTitle, issueContents, issueHashtag, issueCategory, issueAuthor, active) => {
-        // await postApi(
-        //     "issue/",
-        //     {issueTitle, issueContents, issueHashtag, issueCategory, issueAuthor, active});
+    const createIssue = (issueTitle, issueContents, issueHashtag, issueCategory, issueAuthor, active) => {
+        axios.post("http://localhost:5000/api/issue", {
+            issueTitle, issueContents, issueHashtag, issueCategory, issueAuthor, active
+        }).then(response => console.log(response))
 
-        console.log("최종으로 보내는 것!")
-        console.log(`제목: ${issueTitle}`);
-        console.log(`해시태그: ${issueHashtag}`);
-        console.log(`내용: ${issueContents}`);
-        console.log(`카테고리: ${issueCategory}`);
-        console.log(active);
+        // console.log("최종으로 보내는 것!")
+        // console.log(`제목: ${issueTitle}`);
+        // console.log(`해시태그: ${issueHashtag}`);
+        // console.log(`내용: ${issueContents}`);
+        // console.log(`카테고리: ${issueCategory}`);
+        // console.log(active);
         setTitle("");
         setContents("");
         setHashtag("");

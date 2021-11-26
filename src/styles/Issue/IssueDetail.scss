@@ -3,7 +3,7 @@
 .issueDetail-mintbg {
   position: absolute;
   width: 1300px;
-  height: 100%;
+  height: 800px;
   left: -500px;
   top: 10px;
   background: #5DDADB;
@@ -24,7 +24,8 @@
   height: 100%;
   background: #FFFFFF;
   box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.1);
-  padding: 40px 30px;
+  padding: 40px 35px;
+  margin-bottom: 30px;
 
   .issueDetail-hashtag-wrap {
     display: flex;
@@ -48,7 +49,11 @@
   }
 
   .issueDetail-contents {
+    margin-top: 20px;
     font-size: 18px;
+    word-break: keep-all;
+    white-space: pre-line;
+    line-height: 30px;
   }
 
   .issueDetail-footer {
@@ -60,7 +65,7 @@
   .issueDetail-bottom {
     display: flex;
     justify-content: space-between;
-    margin-top: 100px;
+    margin-top: 30px;
 
     .issueDetail-bottom-left {
       text-align: center;
@@ -157,7 +162,7 @@
 
   .issueDetail-right-box {
     width: 100%;
-    height: 230px;
+    height: 200px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.1);
