@@ -11,7 +11,7 @@ const SignupEmail = (props) => {
             email:"csh0sns@snu.ac.kr"
         }).then(response => {
             props.setEmail(response.data);
-            alert('인증메일을 발송했습니다!');
+            //alert('인증메일을 발송했습니다!');
         })
     }
     
