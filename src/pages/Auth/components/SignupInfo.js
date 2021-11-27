@@ -1,17 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
 import {NavLink} from "react-router-dom";
 
 const SignupInfo = (props) => {
+    const [Name, setName] = useState("");
+    const [Password, setPassword] = useState("");
+    const [Phonenumber, setPhonenumber] = useState("");
+
+
     const handleName = (e) => {
-        props.setName(e.target.value);
+        setName(e.target.value);
     }
 
     const handlePassword = (e) => {
-        props.setPassword(e.target.value);
+        setPassword(e.target.value);
     }
 
     const handlePhonenumber = (e) => {
-        props.setPhonenumber(e.target.value);
+        setPhonenumber(e.target.value);
+    }
+
+    const onSubmitHandler = (e) => {
+        //안써주면 가입버튼 누를때마다 페이지가 새로고침되어 아래를 실행할 수 없기 때문
+        e.preventDefault();
+        console.log({Name, Password, Phonenumber});
+
     }
 
     return (
@@ -20,21 +32,22 @@ const SignupInfo = (props) => {
                 <span>회원인증</span> > <span className="checked">정보입력</span> > <span>가입완료</span>
             </div>
 
+            <form>
             <div className="signup-info">
                 <div>이메일 ID</div>
-                <input value="csh0sns@snu.ac.kr" className="fixed"/>
+                <input defaultValue="csh0sns@snu.ac.kr" className="fixed"/>
             </div>
             <div className="signup-info">
                 <div>이름</div>
-                <input type="text" value={props.name} onChange={handleName}/>
+                <input type="text" value={Name} onChange={handleName}/>
             </div>
             <div className="signup-info">
                 <div>연락처</div>
-                <input type="text" value={props.phonenumber} onChange={handlePhonenumber}/>
+                <input type="text" value={Phonenumber} onChange={handlePhonenumber}/>
             </div>
             <div className="signup-info">
                 <div>비밀번호</div>
-                <input type="password" value={props.password} onChange={handlePassword}/>
+                <input type="password" value={Password} onChange={handlePassword}/>
             </div>
             <div className="signup-info">
                 <div>비밀번호 확인</div>
@@ -64,8 +77,10 @@ const SignupInfo = (props) => {
 
             <div className="signupInfo-buttons">
                 <button className="cancel">취소하기</button>
-                <button className="submit"><NavLink to="/auth/signup/callback" className="submit">가입하기</NavLink></button>
+                <button className="submit"><NavLink to="/auth/signup/callback" className="submit" onSubmit={onSubmitHandler}>가입하기</NavLink></button>
             </div>
+
+            </form>
         </>
     )
 }
