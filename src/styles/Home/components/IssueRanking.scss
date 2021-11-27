@@ -1,11 +1,50 @@
 @import '../../init.scss';
 
 .issueRanking-ranking{
-    /* Rectangle 281 */
     width: 100%;
-    height: 365px;
     margin: 0 auto;
     background: #FFFFFF;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 35px 0;
+}
+
+.issueRanking-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    margin-bottom: 25px;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    .issueRanking-num {
+        width: 150px;
+        text-align: center;
+        font-weight: bolder;
+    }
+
+    .issueRanking-title {
+        width: 650px;
+        font-weight: bolder;
+    }
+
+    .issueRanking-up {
+        width: 200px;
+        text-align: center;
+    }
+
+    .issueRanking-change {
+        width: 200px;
+        text-align: center;
+    }
+
+    .up {
+        color: crimson;
+    }
+
+    .down {
+        color: cornflowerblue;
+    }
 }
