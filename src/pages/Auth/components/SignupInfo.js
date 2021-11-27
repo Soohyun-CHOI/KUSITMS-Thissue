@@ -20,9 +20,8 @@ const SignupInfo = (props) => {
     }
 
     const onSubmitHandler = (e) => {
-        //안써주면 가입버튼 누를때마다 페이지가 새로고침되어 아래를 실행할 수 없기 때문
         e.preventDefault();
-        console.log({Name, Password, Phonenumber});
+        //console.log({Name, Password, Phonenumber});
 
     }
 
