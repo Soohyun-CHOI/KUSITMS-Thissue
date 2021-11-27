@@ -1,9 +1,20 @@
 import React from "react";
+import axios from "axios";
 
 const SignupEmail = (props) => {
     const handleEmail = (e) => {
         props.setEmail(e.target.value);
     }
+
+    const onSubmitHandler = (e) => {
+        axios.post('http://localhost:5000/api/email/emailAuth',{
+            email:"csh0sns@snu.ac.kr"
+        }).then(response => {
+            props.setEmail(response.data);
+            alert('인증메일을 발송했습니다!');
+        })
+    }
+    
 
     return (
         <>
@@ -18,14 +29,17 @@ const SignupEmail = (props) => {
                 <span>이용약관에 동의합니다.</span>
             </div>
             <div className="signupInfo-title">이메일 인증으로 가입하기</div>
-            <input className="signupInfo-email" type="text" placeholder="이메일을 입력해주세요" value={props.email}
-                   onChange={handleEmail}/>
-            <div className="signupInfo-email-button">
-                <button>
-                    인증번호 전송하기
-                </button>
-                <div className="signupInfo-text">이메일을 확인해서 인증을 진행해주세요!<br/>메일을 받지 못했을 경우 스팸메일함을 확인해주세요.</div>
-            </div>
+
+            <form onSubmit={onSubmitHandler}>
+                <input className="signupInfo-email" type="text" placeholder="이메일을 입력해주세요" value={props.email}
+                    onChange={handleEmail}/>
+                <div className="signupInfo-email-button">
+                    <button >
+                        인증메일 전송하기
+                    </button>
+                    <div className="signupInfo-text">이메일을 확인해서 인증을 진행해주세요!<br/>메일을 받지 못했을 경우 스팸메일함을 확인해주세요.</div>
+                </div>
+            </form>
         </>
     )
 }
