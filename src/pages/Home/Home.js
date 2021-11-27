@@ -75,7 +75,7 @@ const Home = () => {
                     {categoryArray.map(category =>
                         <NavLink to={`/${category.englishName}/`}
                                  key={category.id}>
-                            <div className="home-category">{category.emoji} {category.koreanName}</div>
+                            <button className="home-category">{category.emoji} {category.koreanName}</button>
                         </NavLink>
                     )}
                 </div>

@@ -42,6 +42,17 @@
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
         font-size: 20px;
         border-radius: 5px;
+        background-color: white;
+
+        &:focus {
+            background-color: #5DDADB;
+            color: white;
+            font-weight: bolder;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
